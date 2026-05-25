@@ -38,3 +38,10 @@ button {
   margin-top: 20px;
   font-weight: bold;
 }
+.sample-card {
+  background: #fafafa;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}

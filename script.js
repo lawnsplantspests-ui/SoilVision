@@ -43,5 +43,53 @@ document
 
       console.error(error);
     }
+async function loadSamples() {
+
+  try {
+
+    const response = await fetch(
+      API_URL + "?action=getSamples"
+    );
+
+    const samples = await response.json();
+
+    const container =
+      document.getElementById("samplesContainer");
+
+    container.innerHTML = "";
+
+    samples.reverse().forEach(sample => {
+
+      const card = document.createElement("div");
+
+      card.className = "sample-card";
+
+      card.innerHTML = `
+        <h3>${sample.customer_id}</h3>
+
+        <p><strong>Date:</strong> ${sample.sample_date}</p>
+
+        <p><strong>pH:</strong> ${sample.ph}</p>
+
+        <p><strong>P:</strong> ${sample.phosphorus}</p>
+
+        <p><strong>K:</strong> ${sample.potassium}</p>
+
+        <p><strong>CEC:</strong> ${sample.cec}</p>
+
+        <hr>
+      `;
+
+      container.appendChild(card);
+
+    });
+
+  } catch(error) {
+
+    console.error(error);
+
+  }
+}
+
 
 });
