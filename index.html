@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SoilVision</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>SoilVision</h1>
+
+    <form id="soilForm">
+
+      <input type="text" id="customer_id" placeholder="Customer ID">
+
+      <input type="date" id="sample_date">
+
+      <input type="text" id="field_id" placeholder="Field ID">
+
+      <input type="number" step="0.1" id="ph" placeholder="pH">
+
+      <input type="number" id="phosphorus" placeholder="Phosphorus">
+
+      <input type="number" id="potassium" placeholder="Potassium">
+
+      <input type="number" step="0.1" id="acidity" placeholder="Acidity">
+
+      <input type="number" step="0.1" id="cec" placeholder="CEC">
+
+      <input type="number" step="0.1" id="calcium" placeholder="Calcium">
+
+      <input type="number" step="0.1" id="magnesium" placeholder="Magnesium">
+
+      <input type="text" id="lime_rec" placeholder="Lime Recommendation">
+
+      <input type="text" id="nitrogen_rec" placeholder="Nitrogen Recommendation">
+
+      <textarea id="notes" placeholder="Notes"></textarea>
+
+      <button type="submit">Save Sample</button>
+
+    </form>
+
+    <div id="status"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
