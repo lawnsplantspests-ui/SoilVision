@@ -7,26 +7,55 @@ document
     e.preventDefault();
 
     const data = {
-      customer_id: document.getElementById("customer_id").value,
-      sample_date: document.getElementById("sample_date").value,
-      field_id: document.getElementById("field_id").value,
-      ph: document.getElementById("ph").value,
-      phosphorus: document.getElementById("phosphorus").value,
-      potassium: document.getElementById("potassium").value,
-      acidity: document.getElementById("acidity").value,
-      cec: document.getElementById("cec").value,
-      calcium: document.getElementById("calcium").value,
-      magnesium: document.getElementById("magnesium").value,
-      lime_rec: document.getElementById("lime_rec").value,
-      nitrogen_rec: document.getElementById("nitrogen_rec").value,
-      notes: document.getElementById("notes").value
+
+      customer_id:
+        document.getElementById("customer_id").value,
+
+      sample_date:
+        document.getElementById("sample_date").value,
+
+      field_id:
+        document.getElementById("field_id").value,
+
+      ph:
+        document.getElementById("ph").value,
+
+      phosphorus:
+        document.getElementById("phosphorus").value,
+
+      potassium:
+        document.getElementById("potassium").value,
+
+      acidity:
+        document.getElementById("acidity").value,
+
+      cec:
+        document.getElementById("cec").value,
+
+      calcium:
+        document.getElementById("calcium").value,
+
+      magnesium:
+        document.getElementById("magnesium").value,
+
+      lime_rec:
+        document.getElementById("lime_rec").value,
+
+      nitrogen_rec:
+        document.getElementById("nitrogen_rec").value,
+
+      notes:
+        document.getElementById("notes").value
+
     };
 
     try {
 
       const response = await fetch(API_URL, {
+
         method: "POST",
         body: JSON.stringify(data)
+
       });
 
       const result = await response.json();
@@ -42,7 +71,11 @@ document
         "Error saving sample.";
 
       console.error(error);
+
     }
+
+});
+
 async function loadSamples() {
 
   try {
@@ -65,19 +98,35 @@ async function loadSamples() {
       card.className = "sample-card";
 
       card.innerHTML = `
+
         <h3>${sample.customer_id}</h3>
 
-        <p><strong>Date:</strong> ${sample.sample_date}</p>
+        <p><strong>Date:</strong>
+        ${sample.sample_date}</p>
 
-        <p><strong>pH:</strong> ${sample.ph}</p>
+        <p><strong>Field:</strong>
+        ${sample.field_id}</p>
 
-        <p><strong>P:</strong> ${sample.phosphorus}</p>
+        <p><strong>pH:</strong>
+        ${sample.ph}</p>
 
-        <p><strong>K:</strong> ${sample.potassium}</p>
+        <p><strong>Phosphorus:</strong>
+        ${sample.phosphorus}</p>
 
-        <p><strong>CEC:</strong> ${sample.cec}</p>
+        <p><strong>Potassium:</strong>
+        ${sample.potassium}</p>
+
+        <p><strong>CEC:</strong>
+        ${sample.cec}</p>
+
+        <p><strong>Calcium:</strong>
+        ${sample.calcium}</p>
+
+        <p><strong>Magnesium:</strong>
+        ${sample.magnesium}</p>
 
         <hr>
+
       `;
 
       container.appendChild(card);
@@ -89,7 +138,5 @@ async function loadSamples() {
     console.error(error);
 
   }
+
 }
-
-
-});
